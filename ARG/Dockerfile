@@ -3,5 +3,7 @@ FROM almalinux:${VERSION:-9}
 ARG course=docker \
     trainer=shiva \
     author=shiva
+ENV COURSE=${course} 
+#This sets the environment variable COURSE to the value of the build argument course, which defaults to "docker" if not provided.
  RUN echo "Course: ${course}, Trainer: ${trainer}, Author: ${author}, Version: ${VERSION}"
  CMD ["sleep", "infinity"] # This command keeps the container running indefinitely, allowing us to inspect the environment variables when we run the container.
