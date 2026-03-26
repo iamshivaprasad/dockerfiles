@@ -1,0 +1,5 @@
+FROM almalinux
+#ENTRYPOINT ["echo", "Hello, I'm a container!"] # This command will be executed when the container starts, and it will print the message to the console.
+
+CMD ["google.com"] # This command will be executed when the container starts, and it will print the message to the console. CMD is used here instead of ENTRYPOINT, which means that if we provide any command when running the container, it will override this CMD instruction.
+ENTRYPOINT [ "ping" ] # This command will be executed when the container starts, and it will ping the specified address. Since we have used ENTRYPOINT, if we provide any command when running the container, it will be passed as an argument to the ENTRYPOINT instruction. For example, if we run the container with "docker run <image_name> google.com", it will execute "ping google.com".
